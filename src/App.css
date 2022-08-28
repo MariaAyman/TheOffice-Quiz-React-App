@@ -13,7 +13,6 @@ body{
 }
 
 .levels-section{
-  border: 1px solid red;
   width: 600px;
   height: 500px;
   display: flex;
@@ -21,12 +20,17 @@ body{
   flex-direction: column;
 }
 
-h1,h3 {
+h3 {
   color: #000;
 }
 
-h1{
-  margin-bottom: 100px;
+.sign{
+  width: 500px;
+  margin-bottom: 30px;
+}
+
+.sign-img{
+  width: 100%;
 }
 
 h3{

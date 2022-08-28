@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Route, Routes } from "react-router-dom";
 import './App.css';
+
 import Levels from './Pages/Levels';
 import QuizApp from './Pages/QuizApp';
 
@@ -97,6 +99,27 @@ function App() {
     },
   ];
 
+  //shuffle questions
+  const shuffle = (arr) => {
+    let currIndex = arr.length;
+    let randomIndex;
+
+    //while there are elements to shuffle
+    while(currIndex != 0){
+        //pick a remaining element 
+        randomIndex = Math.floor(Math.random() * currIndex);
+        currIndex--;
+
+        //swap it with the curr element
+        [arr[currIndex], arr[randomIndex]] = [arr[randomIndex], arr[currIndex]];
+    }
+    console.log(arr);
+
+    return arr;
+  }
+
+  const [shuffledQues, setShuffle] = useState(shuffle(questions));
+
   /*const handleAnswers = (isCorrect) => {
     if(isCorrect){
       setScore(score +1);
@@ -114,8 +137,12 @@ function App() {
   return (
     <>
 
-    {/* <QuizApp questions={questions}/> */}
-    <Levels />
+    <Routes>
+      <Route exact path="/" element={<Levels />} />
+      <Route path='/easy' element={<QuizApp questions={shuffledQues} onShuffleChange={setShuffle} shuffle={shuffle} />} />
+      {/* <Route path='/meduim' element={<QuizApp questions={}/>} />
+      <Route path='/hard' element={<QuizApp questions={}/>} /> */}
+    </Routes>
 
     </>
   );

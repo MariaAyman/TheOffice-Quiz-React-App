@@ -1,30 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import StartAgain from '../Components/StartAgain';
 import Question from '../Components/Question';
 import Choices from '../Components/Choices';
 import ErrorMessage from '../Components/ErrorMessage';
 
-function QuizApp({questions}) {
+function QuizApp({questions, onShuffleChange, shuffle}) {
 
-    //shuffle questions
-    const shuffle = (arr) => {
-        let currIndex = arr.length;
-        let randomIndex;
-
-        //while there are elements to shuffle
-        while(currIndex != 0){
-            //pick a remaining element 
-            randomIndex = Math.floor(Math.random() * currIndex);
-            currIndex--;
-
-            //swap it with the curr element
-            [arr[currIndex], arr[randomIndex]] = [arr[randomIndex], arr[currIndex]];
-        }
-
-        return arr;
-    }
-
-    const [shuffledQues, setShuffle] = useState(shuffle(questions));
     const [currQuestion, setCurrQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
@@ -47,7 +28,7 @@ function QuizApp({questions}) {
         if(selected) {
           const nextQuestion = currQuestion + 1;
     
-          if (nextQuestion < shuffledQues.length) {
+          if (nextQuestion < questions.length) {
             setCurrQuestion(nextQuestion);
           } else {
             setShowScore(true);
@@ -59,12 +40,12 @@ function QuizApp({questions}) {
         }
     }
     
-    const handleStartAgain = () => {
-        setShuffle(shuffle(questions));
+    const handleStartAgain = useCallback(() => {
+        onShuffleChange(shuffle(questions));
         setCurrQuestion(0);
         setShowScore(false);
         setScore(0);
-    }
+    }, [onShuffleChange]);
 
     return (
         <>
@@ -76,7 +57,7 @@ function QuizApp({questions}) {
             {/* Start again Section */}
             {showScore ? (
             <StartAgain 
-                questions={shuffledQues} 
+                questions={questions} 
                 score={score} 
                 handleStartAgain={handleStartAgain} />
             ) : (
@@ -86,17 +67,17 @@ function QuizApp({questions}) {
 
                 {/* Question Section */}
                 <Question 
-                    questions={shuffledQues} 
+                    questions={questions} 
                     currQuestion={currQuestion} />
       
                 {/* Answers/Choices Section */}
                 <Choices 
-                    questions={shuffledQues} 
+                    questions={questions} 
                     currQuestion={currQuestion} 
                     selected={selected} 
                     handleSelect={handleSelect} 
-                handleCheck={handleCheck} 
-                handleNext={handleNext} />
+                    handleCheck={handleCheck} 
+                    handleNext={handleNext} />
         </>
             )}
         </div>

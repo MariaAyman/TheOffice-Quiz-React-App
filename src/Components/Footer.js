@@ -10,13 +10,13 @@ function Footer(props) {
                 <span>Made by MariaAyman</span>
             </div>
             <div className='socmed-icons'>
-                <a href='https://github.com/MariaAyman' target="_blank">
+                <a href='https://github.com/MariaAyman' target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-github fa-lg"></i>
                 </a>
-                <a href='https://www.linkedin.com/in/maria-ayman-mansour1877/' target="_blank">
+                <a href='https://www.linkedin.com/in/maria-ayman-mansour1877/' target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-linkedin fa-lg"></i>
                 </a>
-                <a href='https://dribbble.com/MariaAyman' target="_blank">
+                <a href='https://dribbble.com/MariaAyman' target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-dribbble fa-lg"></i>
                 </a>
             </div>

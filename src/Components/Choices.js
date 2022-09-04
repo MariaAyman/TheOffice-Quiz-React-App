@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NextButton from './NextButton';
 
 function Choices({questions, currQuestion, selected, handleSelect, handleCheck, handleNext}) { 

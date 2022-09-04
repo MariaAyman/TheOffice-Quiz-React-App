@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Footer from './Components/Footer';
@@ -385,7 +385,7 @@ function App() {
     let randomIndex;
 
     //while there are elements to shuffle
-    while(currIndex != 0){
+    while(currIndex !== 0){
         //pick a remaining element 
         randomIndex = Math.floor(Math.random() * currIndex);
         currIndex--;

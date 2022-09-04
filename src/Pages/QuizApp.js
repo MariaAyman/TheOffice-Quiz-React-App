@@ -45,7 +45,7 @@ function QuizApp({questions, onShuffleChange, shuffle}) {
         setCurrQuestion(0);
         setShowScore(false);
         setScore(0);
-    }, [onShuffleChange]);
+    }, [onShuffleChange, shuffle, questions]);
 
     return (
         <>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NextButton from './NextButton';
 
-function Choices({questions, currQuestion, selected, handleSelect, handleCheck, handleNext}) {
-    return (
+function Choices({questions, currQuestion, selected, handleSelect, handleCheck, handleNext}) { 
+  return (
         <div className='answer-section'>
 	          {questions[currQuestion].options.map((option, i) => (
 		          <button

@@ -407,9 +407,12 @@ function App() {
 
     <Routes>
       <Route exact path="/" element={<Levels />} />
-      <Route path='/easy' element={<QuizApp questions={easyQuestions} onShuffleChange={setEasyShuffle} shuffle={shuffle} />} />
+      {/* <Route path='/easy' element={<QuizApp questions={easyQuestions} onShuffleChange={setEasyShuffle} shuffle={shuffle} />} />
       <Route path='/meduim' element={<QuizApp questions={medQuestions} onShuffleChange={setMedShuffle} shuffle={shuffle} />} />
-      <Route path='/hard' element={<QuizApp questions={hardQuestions} onShuffleChange={setHardShuffle} shuffle={shuffle} />} />
+      <Route path='/hard' element={<QuizApp questions={hardQuestions} onShuffleChange={setHardShuffle} shuffle={shuffle} />} /> */}
+      <Route path='/easy' element={<QuizApp questions={easyQuestions} shuffle={shuffle} />} />
+      <Route path='/meduim' element={<QuizApp questions={medQuestions} shuffle={shuffle} />} />
+      <Route path='/hard' element={<QuizApp questions={hardQuestions} shuffle={shuffle} />} />
     </Routes>
     <Footer/>
     </>

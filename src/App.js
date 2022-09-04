@@ -7,7 +7,7 @@ import Levels from './Pages/Levels';
 import QuizApp from './Pages/QuizApp';
 
 function App() {
-  const questions = [
+  /*const questions = [
     {
       qText: "Who dates Pam's mother?",
       options: [
@@ -98,7 +98,7 @@ function App() {
         { aText: 'Keith', isCorrect: false},
       ],
     },
-  ];
+  ];*/
 
   const easyQuestions = [
     {
@@ -398,9 +398,9 @@ function App() {
     return arr;
   }
 
-  const [easyShuffle, setEasyShuffle] = useState([shuffle(easyQuestions)]);
+  /*const [easyShuffle, setEasyShuffle] = useState([shuffle(easyQuestions)]);
   const [medShuffle, setMedShuffle] = useState([shuffle(medQuestions)]);
-  const [hardShuffle, setHardShuffle] = useState([shuffle(hardQuestions)]);
+  const [hardShuffle, setHardShuffle] = useState([shuffle(hardQuestions)]);*/
 
   return (
     <>

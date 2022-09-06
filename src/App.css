@@ -12,6 +12,7 @@ body{
   color: #fff;
 }
 
+/*Footer style*/
 .footer{
   background-color: gray;
   position: fixed;
@@ -70,16 +71,13 @@ a{
   color: #ea4c89;
 }
 
+/*Home page style "Levels"*/
 .levels-section{
   width: 600px;
   height: 500px;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-h3 {
-  color: #000;
 }
 
 .sign{
@@ -93,6 +91,7 @@ h3 {
 
 h3{
   margin-bottom: 50px;
+  color: #000;
 }
 
 .difficulty-section{
@@ -121,6 +120,7 @@ h3{
   transform: scale(1.1);
 }
 
+/*Quiz App style*/
 .quiz-app{
   background-color: #252d4a;
   width: 430px;
@@ -133,6 +133,7 @@ h3{
   justify-content: space-evenly;
 }
 
+/*Scroe section style*/
 .score-section{
   display: flex;
   font-size: 24px;
@@ -154,6 +155,7 @@ h3{
   text-align: center;
 }
 
+/*Question section style*/
 .question-section{
   width: 100%;
   height: 100%;
@@ -173,6 +175,7 @@ h3{
   margin-bottom: 12px;
 }
 
+/*Choices section style*/
 .answer-section{
   width: 100%;
   display: flex;
@@ -216,6 +219,7 @@ button:focus {
   outline: none;
 }
 
+/*Next buttom style*/
 .next-section{
   margin-top: 12px;
   display: flex;
@@ -236,6 +240,7 @@ button:focus {
   border: 5px solid #234668;
 }
 
+/*Error msg style*/
 .error-msg{
   text-align: center;
   background-color: #ff3333;
@@ -244,3 +249,60 @@ button:focus {
   margin-bottom: 20px;
   font-size: 20px;
 }
+
+/* Extra small devices (phones, 600px and down)*/
+@media only screen and (max-width: 600px){
+  body{
+    background-position-x: -730px;
+    background-position-y: 0px;
+    background-size: 1536px 870px;
+  }
+
+  .levels-section{
+    width: 300px;
+  }
+
+  .sign{
+    width: 300px;
+  }
+
+  .select{
+    width: 70px;
+    height: 70px;
+    font-size: 15px;
+  }
+
+  .footer{
+    padding: 10px;
+  }
+
+  .made-by{
+    width: 200px;
+    justify-content: space-around;
+  }
+
+  .logo{
+    width: 30px;
+    height: 30px;
+  }
+
+  .made-by span{
+    font-size: 15px;
+  }
+
+  .socmed-icons{
+    width: 150px;
+  }
+}
+
+/*Small devices (portrait tablets and large phones, 600px and up)*/
+@media only screen and (min-width: 600px){}
+
+/*Meduim devices (landscape tablets, 768px and up)*/
+@media only screen and (min-width: 768px){}
+
+/*Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px){}
+
+/*Extra large devices (large laptops and desktops, 1200px and up)*/
+@media only screen and (min-width: 1200px){}
